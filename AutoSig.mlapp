@@ -1,0 +1,714 @@
+## 源代码文件
+classdef app2 < matlab.apps.AppBase
+
+    % Properties that correspond to app components
+    properties (Access = public)
+        UIFigure           matlab.ui.Figure
+        Menu_II_Signals    matlab.ui.container.Menu
+        Menu_V5_Signals    matlab.ui.container.Menu
+        Menu_V5II_Signals  matlab.ui.container.Menu
+        TabGroup           matlab.ui.container.TabGroup
+        IITab              matlab.ui.container.Tab
+        Button_II_PSD      matlab.ui.control.StateButton
+        Button_II_Filter   matlab.ui.control.StateButton
+        UIAxes_II          matlab.ui.control.UIAxes
+        V5Tab              matlab.ui.container.Tab
+        Button_V5_PSD      matlab.ui.control.Button
+        Button_V5_Filter   matlab.ui.control.Button
+        UIAxes_V5          matlab.ui.control.UIAxes
+        Tab                matlab.ui.container.Tab
+        UIAxes_Phase       matlab.ui.control.UIAxes
+        Tab_2              matlab.ui.container.Tab
+        UIAxes_Amplitude   matlab.ui.control.UIAxes
+        Tab_3              matlab.ui.container.Tab
+        UIAxes_PIH         matlab.ui.control.UIAxes
+        Tab_4              matlab.ui.container.Tab
+        UIAxes_CoheFunc    matlab.ui.control.UIAxes
+        Tab_5              matlab.ui.container.Tab
+        UIAxes_CorrFunc    matlab.ui.control.UIAxes
+        Panel_2            matlab.ui.container.Panel
+        TextArea_log       matlab.ui.control.TextArea
+    end
+
+    
+    properties (Access = private)
+        StrArray % log
+        oriSig_ii % II信号导联数据
+        oriSig_v5 % V5信号导联数据
+    end
+    
+    properties (Access = public)
+        
+    end
+    
+    methods (Access = private)
+        
+        function logRefresh(app,StrArrayNew)
+            %刷新调试信息
+            if length(app.StrArray)>=5
+                app.StrArray={};
+            end
+            app.StrArray=[app.StrArray,StrArrayNew];
+            app.TextArea_log.Value=app.StrArray;
+        end
+
+    end
+    
+
+    % Callbacks that handle component events
+    methods (Access = private)
+
+        % Menu selected function: Menu_V5_Signals
+        function Menu_V5_SignalsSelected(app, event)
+            %浏览文件并选择信号文件
+            [fileName,pathName] = uigetfile({'*.txt';'*.m';'*.slx';'*.mat';'*.*'});
+            if ~isequal(fileName,0)                 
+                % 文件读取
+                fullFileName=fullfile(pathName,fileName); 
+                StrArrayNew={['Msg: ',fullFileName,' 信号原始数据导入成功!']};
+                logRefresh(app,StrArrayNew); 
+
+                % 数据载入         
+                app.oriSig_v5=load(fullFileName);
+                
+                % 画图
+                plot(app.oriSig_v5,'Parent',app.UIAxes_V5);
+                
+                % 标题
+                title(app.UIAxes_V5,'V5 Signals');
+                
+                % X轴与Y轴名称
+                app.UIAxes_V5.YLabel.String='Voltage (mV)';
+                app.UIAxes_V5.XLabel.String='Sampling Point';
+
+                % X轴刻度
+                %app.UIAxes_V5.XLim=[-120 8320];
+                
+                % 输出日志
+                StrArrayNew={['Msg: ',fileName(1:end-4),' 信号原始数据加载成功!']};
+                logRefresh(app,StrArrayNew);                              
+            else
+                StrArrayNew={'Err: 信号文件浏览失败!'};
+                logRefresh(app,StrArrayNew);
+                return
+            end
+        end
+
+        % Menu selected function: Menu_V5II_Signals
+        function Menu_V5II_SignalsSelected(app, event)
+            if isempty(app.oriSig_v5)
+                StrArrayNew={'Err: 未检测到V5导联信号数据，请导入！'};
+                logRefresh(app,StrArrayNew); 
+            elseif isempty(app.oriSig_ii)
+                StrArrayNew={'Err: 未检测到II导联信号数据，请导入！'};
+                logRefresh(app,StrArrayNew); 
+            else
+                %% 卷积函数conv()滑动滤波去噪
+                N=length(app.oriSig_ii);                            % 获取待处理信号长度
+                nWindow=9;                                        % 窗口大小
+                kernel=1/nWindow*ones(1,nWindow);             % 构建卷积核
+                Y1_ii=app.oriSig_ii;
+                Y1_v5=app.oriSig_v5;
+                for k=1:3                                          % 滤波次数
+	                Y1_ii=conv(Y1_ii,kernel,'same');             % 利用卷积的方法计算 ii 导联信号
+	                Y1_v5=conv(Y1_v5,kernel,'same');             % 利用卷积的方法计算 v5 导联信号
+                end
+
+                %% 去基线漂移
+                fs=950;                                             % 采样频率
+                fmaxd=0.7;                                         % 截止频率为0.7Hz
+                fmaxn=fmaxd/(fs/2);
+                [b,a]=butter(1,fmaxn,'low');
+                Y2_ii=Y1_ii;
+                Y2_v5=Y1_v5;
+                for i=1:2  
+	                % 处理 ii 导联信号							% 滤波次数
+	                trend_ii=filtfilt(b,a,Y2_ii);                      % 通过0.7Hz低通滤波器的信号
+	                Y2_ii=Y2_ii-trend_ii;                            % 去除这一段信号，得到去基线漂移的信
+                    % 处理 v5 导联信号
+	                trend_v5=filtfilt(b,a,Y2_v5);                      
+	                Y2_v5=Y2_v5-trend_v5; 
+                end                   
+              
+                %% 计算ii、v5导联信号的傅立叶变换
+                DFT_ii=fft(Y2_ii);                                     
+                DFT_v5=fft(Y2_v5);   
+
+                %% 消除相位混乱
+                DFT_ii(abs(DFT_ii)<1e-8)=0;   % 将频域序列 X 中, 幅值小于 1e-5 的数值置零
+                DFT_v5(abs(DFT_v5)<1e-8)=0;   % 将频域序列 X 中, 幅值小于 1e-5 的数值置零
+
+                %% 提取 X 里正频率的部分, 并且将 X 里负频率的部分合并到正频率  
+                Y3_ii=DFT_ii(1:N/2+1);              % 提取 X 里正频率的部分
+                Y3_v5=DFT_v5(1:N/2+1);              % 提取 X 里正频率的部分
+                Y3_ii(2:end-1)=2*Y3_ii(2:end-1);   % 将 X 里负频率的部分合并到正频率
+                Y3_v5(2:end-1)=2*Y3_v5(2:end-1);   % 将 X 里负频率的部分合并到正频率
+
+                %% 定义序列 Y 对应的频率刻度
+                df=fs/N;                                               % 频率间隔
+                fRight=(0:1:N/2)*df;                                % 频率刻度
+                fLeft=(-N/2:1:0)*df; 
+                fTotal=[fLeft fRight];                               % 拼接
+
+                %% ii与v5信号自功率谱
+                GiiR=Y3_ii.*conj(Y3_ii);
+                Gv5R=Y3_v5.*conj(Y3_v5);
+
+                %% ii信号与v5信号互功率谱
+                GxyR=Y3_ii.*conj(Y3_v5);
+                %GyxR=Y3_v5.*conj(Y3_ii);
+
+                %% 传递函数振幅比 Hxy
+                HxyR=GxyR./GiiR;
+
+                %% 脉冲响应 PIH
+                PIHR=ifft(HxyR);
+                PINL=fliplr(PIHR(1:N/2+1));
+                PIH=[PINL PIHR];
+                % 画图
+                plot(app.UIAxes_PIH,fTotal,PIH);
+                title(app.UIAxes_PIH,'Impulse Response of Transfer Function');
+                % X轴与Y轴名称
+                app.UIAxes_PIH.YLabel.String='Amplitude';
+                app.UIAxes_PIH.XLabel.String='Frequency (Hz)';
+                % X轴刻度
+                app.UIAxes_PIH.XLim=[-25 25];
+                % 输出日志
+                StrArrayNew={'Msg: 脉冲响应刻画成功！'};
+                logRefresh(app,StrArrayNew);
+
+                %% 相干函数
+                relatedFuntionS=(GxyR.*GxyR)./(GiiR.*Gv5R);
+                relatedFuntion=real(sqrt(relatedFuntionS));
+                % 处理异常值
+                for r=1:1
+	                for u=2:49                   % 采样分辨率约为0.12，所以从50的下标开始
+		                if relatedFuntion(u) >= 0.999
+			                relatedFuntion(u) = (relatedFuntion(u+1)+relatedFuntion(u-1))/2;
+		                end
+	                end
+                end
+                for u=50:250                    % 采样分辨率约为0.12，所以从50的下标开始
+	                if relatedFuntion(u) < 0.9
+		                relatedFuntion(u) = (relatedFuntion(u+1)+relatedFuntion(u-1))/2;
+	                end
+                end
+                % 画图
+                plot(app.UIAxes_CoheFunc,fRight,relatedFuntion);
+                title(app.UIAxes_CoheFunc,'Correlation Function of Two Signals');
+                % X轴与Y轴名称
+                app.UIAxes_CoheFunc.YLabel.String='Correlation Coefficient';
+                app.UIAxes_CoheFunc.XLabel.String='Frequency (Hz)';
+                % X轴与Y轴刻度
+                app.UIAxes_CoheFunc.XLim=[0 25];
+                app.UIAxes_CoheFunc.YLim=[0 1];
+                % 输出日志
+                StrArrayNew={'Msg: 相干函数刻画成功！'};
+                logRefresh(app,StrArrayNew);
+                
+                %% 互相关函数
+                CCFR=ifft(GxyR);
+                temp=[CCFR(2:N/2+1) (CCFR(N/2+1)+CCFR(N/2))/2];
+                CCFL=fliplr(temp);
+                CCF=[CCFL CCFR];
+                % 画图
+                plot(app.UIAxes_CorrFunc,fTotal,CCF);
+                title(app.UIAxes_CorrFunc,'Cross-Correlation Function of Two Signals');
+                % X轴与Y轴名称
+                app.UIAxes_CorrFunc.YLabel.String='Cross-Correlation Coefficient';
+                app.UIAxes_CorrFunc.XLabel.String='Frequency (Hz)';
+                % X轴刻度
+                app.UIAxes_CorrFunc.XLim=[-25 25];               
+                % 输出日志
+                StrArrayNew={'Msg: 互相关函数刻画成功！'};
+                logRefresh(app,StrArrayNew);
+
+                % 求两个序列之间的传递函数(点除)
+                transferFunctionOfTwoSignal=DFT_v5./DFT_ii;
+                % 依据对称性只取前半部分
+                transferFunctionOfTwoSignal=transferFunctionOfTwoSignal(1:N/2);
+                % 求传递函数的幅值
+                magnitudeOfTF=abs(transferFunctionOfTwoSignal);
+                % 转化为单边谱
+                magnitudeOfTF(1:end-1)=2*magnitudeOfTF(1:end-1);
+                % 求相位(角度制)
+                phaseOfTF=angle(transferFunctionOfTwoSignal)*180/pi;
+                % 求单边谱对应的信号频率
+                f2=(1:N/2)*fs/N;
+
+                %% 画出幅频图
+                % 处理异常值
+                for l=1:length(magnitudeOfTF)
+	                if magnitudeOfTF(l) >= 30
+		                % 用算数平均替换原来的值
+		                magnitudeOfTF(l) = (magnitudeOfTF(l+1)+magnitudeOfTF(l-1))/2;
+	                end
+                end
+                % 画图
+                plot(app.UIAxes_Amplitude,f2,magnitudeOfTF);
+                title(app.UIAxes_Amplitude,'Amplitude-Frequency Diagram of Transfer Tunction');
+                % X轴与Y轴名称
+                app.UIAxes_Amplitude.YLabel.String='Magnitude';
+                app.UIAxes_Amplitude.XLabel.String='Frequency (Hz)';
+                % X轴刻度
+                app.UIAxes_Amplitude.XLim=[0 25];               
+                % 输出日志
+                StrArrayNew={'Msg: 幅频图刻画成功！'};
+                logRefresh(app,StrArrayNew);
+                
+                %% 画出相频图
+                % 处理异常值
+                for u=50:250                    % 采样分辨率约为0.12，所以从50的下标开始
+	                if phaseOfTF(u) >= 31
+		                phaseOfTF(u) = (phaseOfTF(u+1)+phaseOfTF(u-1))/2;
+	                elseif phaseOfTF(u) <= -31
+		                phaseOfTF(u) = (phaseOfTF(u+1)+phaseOfTF(u-1))/2;
+	                end
+                end
+                % 画图
+                plot(app.UIAxes_Phase,f2,phaseOfTF);
+                title(app.UIAxes_Phase,'Phase-Frequency Diagram of Transfer Tunction');
+                % X轴与Y轴名称
+                app.UIAxes_Phase.YLabel.String='Phase (deg)';
+                app.UIAxes_Phase.XLabel.String='Frequency (Hz)';
+                % X轴与Y轴刻度
+                app.UIAxes_Phase.XLim=[0 25]; 
+                app.UIAxes_Phase.YLim=[-180 180];
+                app.UIAxes_Phase.YTick=-180:30:180;
+                % 输出日志
+                StrArrayNew={'Msg: 相频图刻画成功！'};
+                logRefresh(app,StrArrayNew);
+            end
+        end
+
+        % Menu selected function: Menu_II_Signals
+        function Menu_II_SignalsSelected(app, event)
+            %浏览文件并选择信号文件
+            [fileName,pathName] = uigetfile({'*.txt';'*.m';'*.slx';'*.mat';'*.*'});
+            if ~isequal(fileName,0)              
+                % 文件读取
+                fullFileName=fullfile(pathName,fileName); 
+                StrArrayNew={['Msg: ',fullFileName,' 信号原始数据导入成功!']};
+                logRefresh(app,StrArrayNew); 
+
+                % 数据载入                
+                app.oriSig_ii=load(fullFileName);
+                
+                % 画图
+                plot(app.oriSig_ii,'Parent',app.UIAxes_II);
+                
+                % 标题
+                title(app.UIAxes_II,'II Signals');
+                
+                % X轴与Y轴名称
+                app.UIAxes_II.YLabel.String='Voltage (mV)';
+                app.UIAxes_II.XLabel.String='Sampling Point';
+
+                % X轴刻度
+                %app.UIAxes_II.XLim=[-120 8320];
+                
+                % 输出日志
+                StrArrayNew={['Msg: ',fileName(1:end-4),' 信号原始数据加载成功!']};
+                logRefresh(app,StrArrayNew);                              
+            else
+                % 输出日志
+                StrArrayNew={'Err: 信号文件浏览失败!'};
+                logRefresh(app,StrArrayNew);
+                return
+            end
+        end
+
+        % Value changed function: Button_II_Filter
+        function Button_II_FilterValueChanged(app, event)
+            if isempty(app.oriSig_ii)
+                StrArrayNew={'Err: 未检测到II导联信号数据，请导入！'};
+                logRefresh(app,StrArrayNew); 
+            else
+                %% 卷积函数conv()滑动滤波去噪
+                nWindow=9;                                        % 窗口大小
+                kernel=1/nWindow*ones(1,nWindow);             % 构建卷积核
+                Y1_ii=app.oriSig_ii;
+                for k=1:3                                          % 滤波次数
+	                Y1_ii=conv(Y1_ii,kernel,'same');             % 利用卷积的方法计算 ii 导联信号
+                end
+
+                %% 去基线漂移
+                fs=950;                                             % 采样频率
+                fmaxd=0.7;                                         % 截止频率为0.7Hz
+                fmaxn=fmaxd/(fs/2);
+                [b,a]=butter(1,fmaxn,'low');
+                Y2_ii=Y1_ii;
+                for i=1:2  
+	                % 处理 ii 导联信号							% 滤波次数
+	                trend_ii=filtfilt(b,a,Y2_ii);                      % 通过0.7Hz低通滤波器的信号
+	                Y2_ii=Y2_ii-trend_ii;                            % 去除这一段信号，得到去基线漂移的信
+                end
+
+                % 画图
+                plot(Y2_ii,'Parent',app.UIAxes_II);
+                
+                % 标题
+                title(app.UIAxes_II,'Filtered II Signals');
+                
+                % X轴与Y轴名称
+                app.UIAxes_II.YLabel.String='Voltage (mV)';
+                app.UIAxes_II.XLabel.String='Sampling Point';
+
+                % X轴刻度
+                %app.UIAxes_II.XLim=[-120 8320];
+                
+                % 输出日志
+                StrArrayNew={['Msg: II导联信号滤波成功!']};
+                logRefresh(app,StrArrayNew);
+            end
+            
+        end
+
+        % Button pushed function: Button_V5_Filter
+        function Button_V5_FilterPushed(app, event)
+            if isempty(app.oriSig_v5)
+                StrArrayNew={'Err: 未检测到V5导联信号数据，请导入！'};
+                logRefresh(app,StrArrayNew); 
+            else
+                %% 卷积函数conv()滑动滤波去噪
+                nWindow=9;                                        % 窗口大小
+                kernel=1/nWindow*ones(1,nWindow);             % 构建卷积核
+                Y1_v5=app.oriSig_v5;
+                for k=1:3                                          % 滤波次数
+	                Y1_v5=conv(Y1_v5,kernel,'same');             % 利用卷积的方法计算 ii 导联信号
+                end
+
+                %% 去基线漂移
+                fs=950;                                             % 采样频率
+                fmaxd=0.7;                                         % 截止频率为0.7Hz
+                fmaxn=fmaxd/(fs/2);
+                [b,a]=butter(1,fmaxn,'low');
+                Y2_v5=Y1_v5;
+                for i=1:2  
+	                % 处理 ii 导联信号							% 滤波次数
+	                trend_v5=filtfilt(b,a,Y2_v5);                      % 通过0.7Hz低通滤波器的信号
+	                Y2_v5=Y2_v5-trend_v5;                            % 去除这一段信号，得到去基线漂移的信
+                end
+
+                % 画图
+                plot(Y2_v5,'Parent',app.UIAxes_V5);
+                
+                % 标题
+                title(app.UIAxes_V5,'Filtered V5 Signals');
+                
+                % X轴与Y轴名称
+                app.UIAxes_V5.YLabel.String='Voltage (mV)';
+                app.UIAxes_V5.XLabel.String='Sampling Point';
+
+                % X轴刻度
+                %app.UIAxes_V5.XLim=[-120 8320];
+                
+                % 输出日志
+                StrArrayNew={['Msg: V5导联信号滤波成功!']};
+                logRefresh(app,StrArrayNew);
+            end
+        end
+
+        % Button pushed function: Button_V5_PSD
+        function Button_V5_PSDPushed(app, event)
+            if isempty(app.oriSig_v5)
+                StrArrayNew={'Err: 未检测到V5导联信号数据，请导入！'};
+                logRefresh(app,StrArrayNew); 
+            else
+                %% 卷积函数conv()滑动滤波去噪
+                N=length(app.oriSig_v5);
+                nWindow=9;                                        % 窗口大小
+                kernel=1/nWindow*ones(1,nWindow);             % 构建卷积核
+                Y1_v5=app.oriSig_v5;
+                for k=1:3                                          % 滤波次数
+	                Y1_v5=conv(Y1_v5,kernel,'same');             % 利用卷积的方法计算 ii 导联信号
+                end
+
+                %% 去基线漂移
+                fs=950;                                             % 采样频率
+                fmaxd=0.7;                                         % 截止频率为0.7Hz
+                fmaxn=fmaxd/(fs/2);
+                [b,a]=butter(1,fmaxn,'low');
+                Y2_v5=Y1_v5;
+                for i=1:2  
+	                % 处理 ii 导联信号							% 滤波次数
+	                trend_v5=filtfilt(b,a,Y2_v5);                      % 通过0.7Hz低通滤波器的信号
+	                Y2_v5=Y2_v5-trend_v5;                            % 去除这一段信号，得到去基线漂移的信
+                end
+                
+                %% 傅立叶变换
+                DFT_v5=fft(Y2_v5);
+
+                %% Compute Power Spectrum (功率谱)
+                k1=1:N;       % freq index of whole signal
+                f1=k1*fs/N;   % Hz
+                      
+                %% watts/bin power spectrum	                           
+                Pbin_v5=abs(DFT_v5).^2/N^2;                        
+                
+                %% one-sided spectrum watts/bin                        
+                Pdisplay_v5=2*Pbin_v5(1:N/2);
+
+                %% Plot one-sided spectrum of V5 signal
+
+                % 画图
+                plot(app.UIAxes_V5,f1(1:N/2),Pdisplay_v5.*1000000);
+                
+                % 标题
+                title(app.UIAxes_V5,'Power Spectrum of Filtered V5 Signals');
+                
+                % X轴与Y轴名称
+                app.UIAxes_V5.XLabel.String='Frequency (Hz)';
+                app.UIAxes_V5.YLabel.String='Power (pW)';
+
+                % X轴刻度
+                app.UIAxes_V5.XLim=[0 25];
+                
+                % 输出日志
+                StrArrayNew={['Msg: V5导联信号功率谱刻画成功!']};
+                logRefresh(app,StrArrayNew);
+            end
+        end
+
+        % Value changed function: Button_II_PSD
+        function Button_II_PSDValueChanged(app, event)
+            if isempty(app.oriSig_ii)
+                StrArrayNew={'Err: 未检测到II导联信号数据，请导入！'};
+                logRefresh(app,StrArrayNew); 
+            else
+                %% 卷积函数conv()滑动滤波去噪
+                N=length(app.oriSig_ii);
+                nWindow=9;                                        % 窗口大小
+                kernel=1/nWindow*ones(1,nWindow);             % 构建卷积核
+                Y1_ii=app.oriSig_ii;
+                for k=1:3                                          % 滤波次数
+	                Y1_ii=conv(Y1_ii,kernel,'same');             % 利用卷积的方法计算 ii 导联信号
+                end
+
+                %% 去基线漂移
+                fs=950;                                             % 采样频率
+                fmaxd=0.7;                                         % 截止频率为0.7Hz
+                fmaxn=fmaxd/(fs/2);
+                [b,a]=butter(1,fmaxn,'low');
+                Y2_ii=Y1_ii;
+                for i=1:2  
+	                % 处理 ii 导联信号							% 滤波次数
+	                trend_ii=filtfilt(b,a,Y2_ii);                      % 通过0.7Hz低通滤波器的信号
+	                Y2_ii=Y2_ii-trend_ii;                            % 去除这一段信号，得到去基线漂移的信
+                end
+                
+                %% 傅立叶变换
+                DFT_ii=fft(Y2_ii);
+
+                %% Compute Power Spectrum (功率谱)
+                k1=1:N;       % freq index of whole signal
+                f1=k1*fs/N;   % Hz
+                      
+                %% watts/bin power spectrum	                           
+                Pbin_ii=abs(DFT_ii).^2/N^2;                        
+                
+                %% one-sided spectrum watts/bin                        
+                Pdisplay_ii=2*Pbin_ii(1:N/2);
+
+                %% Plot one-sided spectrum of II signal
+
+                % 画图
+                plot(app.UIAxes_II,f1(1:N/2),Pdisplay_ii.*1000000);
+                
+                % 标题
+                title(app.UIAxes_II,'Power Spectrum of Filtered II Signals');
+                
+                % X轴与Y轴名称
+                app.UIAxes_II.XLabel.String='Frequency (Hz)';
+                app.UIAxes_II.YLabel.String='Power (pW)';
+
+                % X轴刻度
+                app.UIAxes_II.XLim=[0 25];
+                
+                % 输出日志
+                StrArrayNew={['Msg: V5导联信号功率谱刻画成功!']};
+                logRefresh(app,StrArrayNew);
+            end
+        end
+    end
+
+    % Component initialization
+    methods (Access = private)
+
+        % Create UIFigure and components
+        function createComponents(app)
+
+            % Create UIFigure and hide until all components are created
+            app.UIFigure = uifigure('Visible', 'off');
+            app.UIFigure.Position = [100 100 882 576];
+            app.UIFigure.Name = 'MATLAB App';
+
+            % Create Menu_II_Signals
+            app.Menu_II_Signals = uimenu(app.UIFigure);
+            app.Menu_II_Signals.MenuSelectedFcn = createCallbackFcn(app, @Menu_II_SignalsSelected, true);
+            app.Menu_II_Signals.Text = '导入II导联信号数据';
+
+            % Create Menu_V5_Signals
+            app.Menu_V5_Signals = uimenu(app.UIFigure);
+            app.Menu_V5_Signals.MenuSelectedFcn = createCallbackFcn(app, @Menu_V5_SignalsSelected, true);
+            app.Menu_V5_Signals.Text = '导入V5导联信号数据';
+
+            % Create Menu_V5II_Signals
+            app.Menu_V5II_Signals = uimenu(app.UIFigure);
+            app.Menu_V5II_Signals.MenuSelectedFcn = createCallbackFcn(app, @Menu_V5II_SignalsSelected, true);
+            app.Menu_V5II_Signals.Text = '综合导联信号数据处理';
+
+            % Create Panel_2
+            app.Panel_2 = uipanel(app.UIFigure);
+            app.Panel_2.Title = '操作记录';
+            app.Panel_2.Position = [1 1 882 132];
+
+            % Create TextArea_log
+            app.TextArea_log = uitextarea(app.Panel_2);
+            app.TextArea_log.FontName = 'YaHei Monaco Hybird';
+            app.TextArea_log.FontSize = 14;
+            app.TextArea_log.FontWeight = 'bold';
+            app.TextArea_log.FontColor = [1 1 1];
+            app.TextArea_log.BackgroundColor = [0.149 0.149 0.149];
+            app.TextArea_log.Position = [18 9 850 93];
+
+            % Create TabGroup
+            app.TabGroup = uitabgroup(app.UIFigure);
+            app.TabGroup.Position = [1 132 882 445];
+
+            % Create IITab
+            app.IITab = uitab(app.TabGroup);
+            app.IITab.Title = 'II导联图';
+
+            % Create UIAxes_II
+            app.UIAxes_II = uiaxes(app.IITab);
+            title(app.UIAxes_II, 'Title')
+            ylabel(app.UIAxes_II, 'Y')
+            zlabel(app.UIAxes_II, 'Z')
+            app.UIAxes_II.Position = [18 30 840 380];
+
+            % Create Button_II_Filter
+            app.Button_II_Filter = uibutton(app.IITab, 'state');
+            app.Button_II_Filter.ValueChangedFcn = createCallbackFcn(app, @Button_II_FilterValueChanged, true);
+            app.Button_II_Filter.Text = '信号滤波';
+            app.Button_II_Filter.Position = [148 2 100 25];
+
+            % Create Button_II_PSD
+            app.Button_II_PSD = uibutton(app.IITab, 'state');
+            app.Button_II_PSD.ValueChangedFcn = createCallbackFcn(app, @Button_II_PSDValueChanged, true);
+            app.Button_II_PSD.Text = '信号功率谱';
+            app.Button_II_PSD.Position = [552 1 100 25];
+
+            % Create V5Tab
+            app.V5Tab = uitab(app.TabGroup);
+            app.V5Tab.Title = 'V5导联图';
+
+            % Create UIAxes_V5
+            app.UIAxes_V5 = uiaxes(app.V5Tab);
+            title(app.UIAxes_V5, 'Title')
+            ylabel(app.UIAxes_V5, 'Y')
+            zlabel(app.UIAxes_V5, 'Z')
+            app.UIAxes_V5.Position = [18 30 840 379];
+
+            % Create Button_V5_Filter
+            app.Button_V5_Filter = uibutton(app.V5Tab, 'push');
+            app.Button_V5_Filter.ButtonPushedFcn = createCallbackFcn(app, @Button_V5_FilterPushed, true);
+            app.Button_V5_Filter.Position = [148 2 100 25];
+            app.Button_V5_Filter.Text = '信号滤波';
+
+            % Create Button_V5_PSD
+            app.Button_V5_PSD = uibutton(app.V5Tab, 'push');
+            app.Button_V5_PSD.ButtonPushedFcn = createCallbackFcn(app, @Button_V5_PSDPushed, true);
+            app.Button_V5_PSD.Position = [552 1 100 25];
+            app.Button_V5_PSD.Text = '信号功率谱';
+
+            % Create Tab
+            app.Tab = uitab(app.TabGroup);
+            app.Tab.Title = '综合导联相频图';
+
+            % Create UIAxes_Phase
+            app.UIAxes_Phase = uiaxes(app.Tab);
+            title(app.UIAxes_Phase, 'Title')
+            xlabel(app.UIAxes_Phase, 'X')
+            ylabel(app.UIAxes_Phase, 'Y')
+            zlabel(app.UIAxes_Phase, 'Z')
+            app.UIAxes_Phase.Position = [18 10 850 399];
+
+            % Create Tab_2
+            app.Tab_2 = uitab(app.TabGroup);
+            app.Tab_2.Title = '综合导联幅频图';
+
+            % Create UIAxes_Amplitude
+            app.UIAxes_Amplitude = uiaxes(app.Tab_2);
+            title(app.UIAxes_Amplitude, 'Title')
+            xlabel(app.UIAxes_Amplitude, 'X')
+            ylabel(app.UIAxes_Amplitude, 'Y')
+            zlabel(app.UIAxes_Amplitude, 'Z')
+            app.UIAxes_Amplitude.Position = [18 10 850 399];
+
+            % Create Tab_3
+            app.Tab_3 = uitab(app.TabGroup);
+            app.Tab_3.Title = '综合导联脉冲响应图';
+
+            % Create UIAxes_PIH
+            app.UIAxes_PIH = uiaxes(app.Tab_3);
+            title(app.UIAxes_PIH, 'Title')
+            xlabel(app.UIAxes_PIH, 'X')
+            ylabel(app.UIAxes_PIH, 'Y')
+            zlabel(app.UIAxes_PIH, 'Z')
+            app.UIAxes_PIH.Position = [18 10 850 400];
+
+            % Create Tab_4
+            app.Tab_4 = uitab(app.TabGroup);
+            app.Tab_4.Title = '综合导联相干函数图';
+
+            % Create UIAxes_CoheFunc
+            app.UIAxes_CoheFunc = uiaxes(app.Tab_4);
+            title(app.UIAxes_CoheFunc, 'Title')
+            xlabel(app.UIAxes_CoheFunc, 'X')
+            ylabel(app.UIAxes_CoheFunc, 'Y')
+            zlabel(app.UIAxes_CoheFunc, 'Z')
+            app.UIAxes_CoheFunc.Position = [18 10 850 400];
+
+            % Create Tab_5
+            app.Tab_5 = uitab(app.TabGroup);
+            app.Tab_5.Title = '综合导联互相关函数图';
+
+            % Create UIAxes_CorrFunc
+            app.UIAxes_CorrFunc = uiaxes(app.Tab_5);
+            title(app.UIAxes_CorrFunc, 'Title')
+            xlabel(app.UIAxes_CorrFunc, 'X')
+            ylabel(app.UIAxes_CorrFunc, 'Y')
+            zlabel(app.UIAxes_CorrFunc, 'Z')
+            app.UIAxes_CorrFunc.Position = [18 10 850 400];
+
+            % Show the figure after all components are created
+            app.UIFigure.Visible = 'on';
+        end
+    end
+
+    % App creation and deletion
+    methods (Access = public)
+
+        % Construct app
+        function app = app2
+
+            % Create UIFigure and components
+            createComponents(app)
+
+            % Register the app with App Designer
+            registerApp(app, app.UIFigure)
+
+            if nargout == 0
+                clear app
+            end
+        end
+
+        % Code that executes before app deletion
+        function delete(app)
+
+            % Delete UIFigure when app is deleted
+            delete(app.UIFigure)
+        end
+    end
+end
