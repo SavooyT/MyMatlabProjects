@@ -1,0 +1,19 @@
+# NAME: ICBC
+payload:
+  - DOMAIN-SUFFIX,95588.com
+  - DOMAIN-SUFFIX,95588.com.cn
+  - DOMAIN-SUFFIX,dccnet.com.cn
+  - DOMAIN-SUFFIX,icbc
+  - DOMAIN-SUFFIX,icbc.com.cn
+  - DOMAIN-SUFFIX,icbccs.com.cn
+  - DOMAIN-SUFFIX,icbccstz.com.cn
+  - DOMAIN-SUFFIX,icbcina.com
+  - DOMAIN-SUFFIX,icbcmanila.com.cn
+  - DOMAIN-SUFFIX,icbcstandard.com
+  - DOMAIN-SUFFIX,icbcstandardbank.com
+  - DOMAIN-SUFFIX,icbcstandardresources.com
+  - DOMAIN-SUFFIX,icbcstandardsecurities.com
+  - DOMAIN-SUFFIX,ocsp.digicert.com
+  - DOMAIN-SUFFIX,ocsp.dcocsp.com
+  
+  
