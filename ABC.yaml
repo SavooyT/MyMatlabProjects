@@ -1,4 +1,5 @@
 # NAME: ABC
+# rule/Clash/ABC/ABC_No_Resolve.yaml
 payload:
   - DOMAIN-SUFFIX,95599.cn
   - DOMAIN-SUFFIX,abchina.com
