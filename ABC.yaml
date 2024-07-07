@@ -1,5 +1,5 @@
 # NAME: ABC
-# rule/Clash/ABC/ABC_No_Resolve.yaml
+# https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ABC/ABC_No_Resolve.yaml
 payload:
   - DOMAIN-SUFFIX,95599.cn
   - DOMAIN-SUFFIX,abchina.com
