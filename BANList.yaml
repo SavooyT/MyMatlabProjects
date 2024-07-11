@@ -11,3 +11,4 @@ payload:
   - DOMAIN-SUFFIX,voa.gov
   - DOMAIN-SUFFIX,bannedbook.org
   - DOMAIN-SUFFIX,disqus.com
+  - DOMAIN-SUFFIX,pincong.rocks
