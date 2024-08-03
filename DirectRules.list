@@ -3,6 +3,7 @@ DOMAIN-SUFFIX,com.cn
 # ABC 强制直连
 DOMAIN-KEYWORD,abchina
 DOMAIN-SUFFIX,abchina.com
+DOMAIN-SUFFIX,bankofchina.com
 DOMAIN-SUFFIX,bankabc.com
 DOMAIN-SUFFIX,bscabank.com
 DOMAIN-SUFFIX,openaboc.com
