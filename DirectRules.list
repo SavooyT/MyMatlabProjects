@@ -1,6 +1,9 @@
 DOMAIN-SUFFIX,cn
 DOMAIN-KEYWORD,csdn
 DOMAIN-KEYWORD,baidu
+DOMAIN-SUFFIX,landiannews.com
+DOMAIN-SUFFIX,cnblogs.com
+DOMAIN-SUFFIX,baidu.com
 # ABC 强制直连
 DOMAIN-KEYWORD,abchina
 DOMAIN-SUFFIX,abchina.com
@@ -13,7 +16,6 @@ DOMAIN-SUFFIX,jifenfu.net
 DOMAIN-KEYWORD,icbc
 DOMAIN-SUFFIX,95588.com
 DOMAIN-SUFFIX,95516.com
-DOMAIN-SUFFIX,icbc
 DOMAIN-SUFFIX,icbc.com
 DOMAIN-SUFFIX,inrice.com
 DOMAIN-SUFFIX,icbcina.com
@@ -24,5 +26,3 @@ DOMAIN-SUFFIX,icbcstandardsecurities.com
 DOMAIN-SUFFIX,ocsp.digicert.com
 DOMAIN-SUFFIX,digicert-cn.com
 DOMAIN-SUFFIX,ocsp.dcocsp.com
-
-
