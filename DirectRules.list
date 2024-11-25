@@ -5,6 +5,7 @@ DOMAIN-SUFFIX,landiannews.com
 DOMAIN-SUFFIX,cnblogs.com
 DOMAIN-SUFFIX,douyin.com
 DOMAIN-SUFFIX,eastmoney.com
+DOMAIN-SUFFIX,china-cba.net
 # ABC 强制直连
 DOMAIN-KEYWORD,abchina
 DOMAIN-SUFFIX,abchina.com
