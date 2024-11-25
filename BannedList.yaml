@@ -1,4 +1,3 @@
-# Some Websites Needed Proxy Chain
 payload:
   - DOMAIN-KEYWORD,voa
   - DOMAIN-KEYWORD,rfi
@@ -27,5 +26,3 @@ payload:
   - DOMAIN-SUFFIX,fgmtv.org
   - DOMAIN-SUFFIX,creaders.net
   - DOMAIN-SUFFIX,chinaaffairs.org
-
-
