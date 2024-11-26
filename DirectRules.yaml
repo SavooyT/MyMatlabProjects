@@ -12,6 +12,7 @@ payload:
   - DOMAIN-KEYWORD,chinalive
   - DOMAIN-KEYWORD,csdn
   - DOMAIN-KEYWORD,aliyun
+  - DOMAIN-SUFFIX,alicdn.com
   - DOMAIN-SUFFIX,cnblogs.com
   - DOMAIN-SUFFIX,china-cba.net
   - DOMAIN-SUFFIX,baidu.com
