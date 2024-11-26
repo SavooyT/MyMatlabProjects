@@ -25,5 +25,36 @@ payload:
   - DOMAIN-SUFFIX,citicbank.com,DIRECT
   - DOMAIN-SUFFIX,czbank.com,DIRECT
   - DOMAIN-SUFFIX,cebbank.com,DIRECT
+  - DOMAIN-SUFFIX,abchina.com,DIRECT
+  - DOMAIN-SUFFIX,ccb.com,DIRECT
   - DOMAIN-SUFFIX,yinhangzhaopin.com,DIRECT
+  - DOMAIN-SUFFIX,spacechina.com,DIRECT
+  - DOMAIN-SUFFIX,iguopin.com,DIRECT
+  - DOMAIN-SUFFIX,china-cdt.com,DIRECT
+  - DOMAIN-SUFFIX,chinasatcom.com,DIRECT
+  - DOMAIN-SUFFIX,cfhi.com,DIRECT
+  - DOMAIN-SUFFIX,harbin-electric.com,DIRECT
+  - DOMAIN-SUFFIX,dongfang.com,DIRECT
+  - DOMAIN-SUFFIX,baowugroup.com,DIRECT
+  - DOMAIN-SUFFIX,cmr-co.com,DIRECT
+  - DOMAIN-SUFFIX,airchinagroup.com,DIRECT
+  - DOMAIN-SUFFIX,coscoshipping.com,DIRECT
+  - DOMAIN-SUFFIX,ceairgroup.com,DIRECT
+  - DOMAIN-SUFFIX,sinochem.com,DIRECT
+  - DOMAIN-SUFFIX,cofco.com,DIRECT
+  - DOMAIN-SUFFIX,ccic.com,DIRECT
+  - DOMAIN-SUFFIX,namkwong.com.mo,DIRECT
+  - DOMAIN-SUFFIX,chinaoct.com,DIRECT
+  - DOMAIN-SUFFIX,chinagoldgroup.com,DIRECT
+  - DOMAIN-SUFFIX,cnaf.com,DIRECT
+  - DOMAIN-SUFFIX,xxcig.com,DIRECT
+  - DOMAIN-SUFFIX,sinopharm.com,DIRECT
+  - DOMAIN-SUFFIX,cict.com,DIRECT
+  - DOMAIN-SUFFIX,crecg.com,DIRECT
+  - DOMAIN-SUFFIX,crrcgc.cc,DIRECT
+  - DOMAIN-SUFFIX,bgrimm.com,DIRECT
+  - DOMAIN-SUFFIX,weixin.qq.com,DIRECT
+  - DOMAIN-SUFFIX,grinm.com,DIRECT
+  - DOMAIN-SUFFIX,chinacoal.com,DIRECT
+  - DOMAIN-SUFFIX,comac.cc,DIRECT
   - DOMAIN-SUFFIX,cn,DIRECT
