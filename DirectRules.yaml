@@ -11,6 +11,7 @@ payload:
   - DOMAIN-KEYWORD,cntv
   - DOMAIN-KEYWORD,chinalive
   - DOMAIN-KEYWORD,csdn
+  - DOMAIN-KEYWORD,aliyun
   - DOMAIN-SUFFIX,cnblogs.com
   - DOMAIN-SUFFIX,china-cba.net
   - DOMAIN-SUFFIX,baidu.com
