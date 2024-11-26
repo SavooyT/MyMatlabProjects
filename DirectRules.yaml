@@ -17,4 +17,13 @@ payload:
   - DOMAIN-SUFFIX,landiannews.com,DIRECT
   - DOMAIN-SUFFIX,douyin.com,DIRECT
   - DOMAIN-SUFFIX,eastmoney.com,DIRECT
+  - DOMAIN-SUFFIX,pingan.com,DIRECT
+  - DOMAIN-SUFFIX,cmbchina.com,DIRECT
+  - DOMAIN-SUFFIX,psbc.com,DIRECT
+  - DOMAIN-SUFFIX,cibhk.com,DIRECT
+  - DOMAIN-SUFFIX,bankcomm.com,DIRECT
+  - DOMAIN-SUFFIX,citicbank.com,DIRECT
+  - DOMAIN-SUFFIX,czbank.com,DIRECT
+  - DOMAIN-SUFFIX,cebbank.com,DIRECT
+  - DOMAIN-SUFFIX,yinhangzhaopin.com,DIRECT
   - DOMAIN-SUFFIX,cn,DIRECT
