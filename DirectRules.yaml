@@ -65,4 +65,5 @@ payload:
   - DOMAIN-SUFFIX,ourl.co
   - DOMAIN-SUFFIX,spdb.zhaopin.com
   - DOMAIN-SUFFIX,cdn.jsdelivr.net
+  - DOMAIN-SUFFIX,weibo.com
   - DOMAIN-SUFFIX,cn
