@@ -66,5 +66,5 @@ payload:
   - DOMAIN-SUFFIX,spdb.zhaopin.com
   - DOMAIN-SUFFIX,cdn.jsdelivr.net
   - DOMAIN-SUFFIX,weibo.com
-  - DOMAIN-SUFFIX,cn
   - DOMAIN,wap.stockstar.com
+  - DOMAIN-SUFFIX,cn
