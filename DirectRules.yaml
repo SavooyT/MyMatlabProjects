@@ -67,3 +67,4 @@ payload:
   - DOMAIN-SUFFIX,cdn.jsdelivr.net
   - DOMAIN-SUFFIX,weibo.com
   - DOMAIN-SUFFIX,cn
+  - DOMAIN,wap.stockstar.com
