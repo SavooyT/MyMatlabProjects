@@ -72,5 +72,6 @@ payload:
   - DOMAIN-SUFFIX,umengcloud.com
   - DOMAIN-SUFFIX,bankofchina.com
   - DOMAIN-SUFFIX,bocamchina.com
+  - DOMAIN-SUFFIX,bank-of-china.com
   - DOMAIN,wap.stockstar.com
   - DOMAIN-SUFFIX,cn
