@@ -79,5 +79,6 @@ payload:
   - DOMAIN-SUFFIX,music.163.com
   - DOMAIN-SUFFIX,163yun.com
   - DOMAIN-SUFFIX,chinaz.com
+  - DOMAIN-SUFFIX,juming.com
   - DOMAIN,wap.stockstar.com
   - DOMAIN-SUFFIX,cn
