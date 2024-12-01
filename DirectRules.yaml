@@ -6,14 +6,13 @@ payload:
   - IP-CIDR,172.16.0.0/12,no-resolve
   - IP-CIDR,127.0.0.0/8,no-resolve
   - IP-CIDR,100.64.0.0/10,no-resolve
-  # 其他直连
+# 其他直连
   - DOMAIN-KEYWORD,cctv
   - DOMAIN-KEYWORD,cntv
   - DOMAIN-KEYWORD,chinalive
   - DOMAIN-KEYWORD,csdn
   - DOMAIN-KEYWORD,aliyun
   - DOMAIN-KEYWORD,landian
-  - DOMAIN-KEYWORD,kugou
   - DOMAIN-KEYWORD,kglink
   - DOMAIN-SUFFIX,alicdn.com
   - DOMAIN-SUFFIX,cnblogs.com
@@ -84,6 +83,7 @@ payload:
   - DOMAIN-SUFFIX,163yun.com
   - DOMAIN-SUFFIX,chinaz.com
   - DOMAIN-SUFFIX,juming.com
+  - DOMAIN-SUFFIX,yun-app.net
   - DOMAIN-SUFFIX,netease.com
   - DOMAIN-SUFFIX,yuewen.com
   - DOMAIN-SUFFIX,qidian.com
@@ -97,5 +97,10 @@ payload:
   - DOMAIN-SUFFIX,netease.im
   - DOMAIN-SUFFIX,onethingpcs.com
   - DOMAIN-SUFFIX,tencentmusic.com
+  - DOMAIN-SUFFIX,gslb.ksyuncdn.com
+  - DOMAIN-SUFFIX,kugou.com
+  - DOMAIN-SUFFIX,kugou.net
+  # 截断
   - DOMAIN,wap.stockstar.com
+  - DOMAIN,serveraddr.service.kugou.com
   - DOMAIN-SUFFIX,cn
