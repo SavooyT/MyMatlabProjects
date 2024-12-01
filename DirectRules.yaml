@@ -76,6 +76,7 @@ payload:
   - DOMAIN-SUFFIX,cpo.work
   - DOMAIN-SUFFIX,didomi.io
   - DOMAIN-SUFFIX,126.net
+  - DOMAIN-SUFFIX,126.com
   - DOMAIN-SUFFIX,music.163.com
   - DOMAIN-SUFFIX,163yun.com
   - DOMAIN-SUFFIX,chinaz.com
