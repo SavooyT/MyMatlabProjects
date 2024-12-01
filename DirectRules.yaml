@@ -13,6 +13,8 @@ payload:
   - DOMAIN-KEYWORD,csdn
   - DOMAIN-KEYWORD,aliyun
   - DOMAIN-KEYWORD,landian
+  - DOMAIN-KEYWORD,kugou
+  - DOMAIN-KEYWORD,kglink
   - DOMAIN-SUFFIX,alicdn.com
   - DOMAIN-SUFFIX,cnblogs.com
   - DOMAIN-SUFFIX,china-cba.net
@@ -93,9 +95,7 @@ payload:
   - DOMAIN-SUFFIX,kuiniuca.com
   - DOMAIN-SUFFIX,xycdn.com
   - DOMAIN-SUFFIX,netease.im
-  - DOMAIN-SUFFIX,onethinggpcs.com
-  - DOMAIN-SUFFIX,kugou.com
-  - DOMAIN-SUFFIX,kglink.cn
+  - DOMAIN-SUFFIX,onethingpcs.com
   - DOMAIN-SUFFIX,tencentmusic.com
   - DOMAIN,wap.stockstar.com
   - DOMAIN-SUFFIX,cn
