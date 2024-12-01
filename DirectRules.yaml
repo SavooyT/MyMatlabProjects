@@ -87,5 +87,6 @@ payload:
   - DOMAIN-SUFFIX,qcloud.com
   - DOMAIN-SUFFIX,myqcloud.com
   - DOMAIN-SUFFIX,reader.qq.com
+  - DOMAIN-SUFFIX,easytomessage.com
   - DOMAIN,wap.stockstar.com
   - DOMAIN-SUFFIX,cn
