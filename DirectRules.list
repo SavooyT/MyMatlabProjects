@@ -68,7 +68,13 @@ DOMAIN-SUFFIX,bank-of-china.com
 DOMAIN-SUFFIX,cpo.work
 DOMAIN-SUFFIX,didomi.io
 DOMAIN-SUFFIX,126.net
+DOMAIN-SUFFIX,126.com
 DOMAIN-SUFFIX,music.163.com
 DOMAIN-SUFFIX,163yun.com
+DOMAIN-SUFFIX,chinaz.com
+DOMAIN-SUFFIX,juming.com
+DOMAIN-SUFFIX,yun-app.net
+DOMAIN-SUFFIX,netease.com
 DOMAIN,wap.stockstar.com
+USER-AGENT,NeteaseMusic*
 DOMAIN-SUFFIX,cn
