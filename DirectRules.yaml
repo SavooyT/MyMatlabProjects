@@ -75,7 +75,8 @@ payload:
   - DOMAIN-SUFFIX,bank-of-china.com
   - DOMAIN-SUFFIX,cpo.work
   - DOMAIN-SUFFIX,didomi.io
-  - DOMAIN-SUFFIX,music.126.net
+  - DOMAIN-SUFFIX,126.net
   - DOMAIN-SUFFIX,music.163.com
+  - DOMAIN-SUFFIX,163yun.com
   - DOMAIN,wap.stockstar.com
   - DOMAIN-SUFFIX,cn
