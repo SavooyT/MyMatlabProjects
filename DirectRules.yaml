@@ -82,5 +82,10 @@ payload:
   - DOMAIN-SUFFIX,chinaz.com
   - DOMAIN-SUFFIX,juming.com
   - DOMAIN-SUFFIX,netease.com
+  - DOMAIN-SUFFIX,yuewen.com
+  - DOMAIN-SUFFIX,qidian.com
+  - DOMAIN-SUFFIX,qcloud.com
+  - DOMAIN-SUFFIX,myqcloud.com
+  - DOMAIN-SUFFIX,reader.qq.com
   - DOMAIN,wap.stockstar.com
   - DOMAIN-SUFFIX,cn
