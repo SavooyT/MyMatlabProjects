@@ -76,8 +76,9 @@ payload:
   - DOMAIN-SUFFIX,cpo.work
   - DOMAIN-SUFFIX,didomi.io
   - DOMAIN-SUFFIX,126.net
+  - DOMAIN-SUFFIX,127.net
   - DOMAIN-SUFFIX,126.com
-  - DOMAIN-SUFFIX,music.163.com
+  - DOMAIN-SUFFIX,163.com
   - DOMAIN-SUFFIX,163yun.com
   - DOMAIN-SUFFIX,chinaz.com
   - DOMAIN-SUFFIX,juming.com
@@ -89,5 +90,12 @@ payload:
   - DOMAIN-SUFFIX,reader.qq.com
   - DOMAIN-SUFFIX,e.qq.com
   - DOMAIN-SUFFIX,easytomessage.com
+  - DOMAIN-SUFFIX,kuiniuca.com
+  - DOMAIN-SUFFIX,xycdn.com
+  - DOMAIN-SUFFIX,netease.im
+  - DOMAIN-SUFFIX,onethinggpcs.com
+  - DOMAIN-SUFFIX,kugou.com
+  - DOMAIN-SUFFIX,kglink.cn
+  - DOMAIN-SUFFIX,tencentmusic.com
   - DOMAIN,wap.stockstar.com
   - DOMAIN-SUFFIX,cn
