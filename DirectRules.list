@@ -5,7 +5,6 @@ DOMAIN-KEYWORD,chinalive
 DOMAIN-KEYWORD,csdn
 DOMAIN-KEYWORD,aliyun
 DOMAIN-KEYWORD,landian
-DOMAIN-KEYWORD,kugou
 DOMAIN-KEYWORD,kglink
 DOMAIN-SUFFIX,alicdn.com
 DOMAIN-SUFFIX,cnblogs.com
@@ -90,6 +89,9 @@ DOMAIN-SUFFIX,xycdn.com
 DOMAIN-SUFFIX,netease.im
 DOMAIN-SUFFIX,onethingpcs.com
 DOMAIN-SUFFIX,tencentmusic.com
+DOMAIN-SUFFIX,gslb.ksyuncdn.com
+DOMAIN-SUFFIX,kugou.com
+DOMAIN-SUFFIX,service.kugou.com
 DOMAIN,wap.stockstar.com
 USER-AGENT,NeteaseMusic*
 USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*
