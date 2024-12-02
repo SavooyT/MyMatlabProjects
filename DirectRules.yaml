@@ -14,6 +14,7 @@ payload:
   - DOMAIN-KEYWORD,aliyun
   - DOMAIN-KEYWORD,landian
   - DOMAIN-KEYWORD,kglink
+  - DOMAIN-KEYWORD,qidian
   - DOMAIN-SUFFIX,alicdn.com
   - DOMAIN-SUFFIX,cnblogs.com
   - DOMAIN-SUFFIX,china-cba.net
@@ -69,6 +70,7 @@ payload:
   - DOMAIN-SUFFIX,cdn.jsdelivr.net
   - DOMAIN-SUFFIX,weibo.com
   - DOMAIN-SUFFIX,hbooker.com
+  - DOMAIN-SUFFIX,cdnmg.com
   - DOMAIN-SUFFIX,kuangxiangit.com
   - DOMAIN-SUFFIX,umengcloud.com
   - DOMAIN-SUFFIX,bankofchina.com
@@ -86,7 +88,6 @@ payload:
   - DOMAIN-SUFFIX,yun-app.net
   - DOMAIN-SUFFIX,netease.com
   - DOMAIN-SUFFIX,yuewen.com
-  - DOMAIN-SUFFIX,qidian.com
   - DOMAIN-SUFFIX,qcloud.com
   - DOMAIN-SUFFIX,myqcloud.com
   - DOMAIN-SUFFIX,reader.qq.com
