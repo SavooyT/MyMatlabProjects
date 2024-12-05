@@ -125,7 +125,7 @@ IP-CIDR,59.111.19.33/32,no-resolve
 IP-CIDR,59.111.21.14/31,no-resolve
 
 # 酷狗音乐
-IP-CIDR,49.7.251.0/24,no-resolve
+IP-CIDR,49.7.0.0/16,no-resolve
 IP-CIDR,27.227.161.0/24,no-resolve
 IP-CIDR,116.211.94.0/24,no-resolve
 IP-CIDR,114.217.130.0/24,no-resolve
@@ -134,7 +134,8 @@ IP-CIDR,110.182.132.0/24,no-resolve
 IP-CIDR,56.63.45.0/24,no-resolve
 IP-CIDR,111.122.43.0/24,no-resolve
 IP-CIDR,58.214.211.0/24,no-resolve
-IP-CIDR,183.2.112.0/24,no-resolve
+IP-CIDR,183.2.0.0/16,no-resolve
+IP-CIDR,183.47.30.0/24,no-resolve
 IP-CIDR,119.133.6.0/24,no-resolve
 IP-CIDR,106.6.185.0/24,no-resolve
 IP-CIDR,106.47.51.0/24,no-resolve
@@ -149,3 +150,14 @@ IP-CIDR,101.65.133.0/24,no-resolve
 IP-CIDR,122.139.233.0/24,no-resolve
 IP-CIDR,58.21.209.0/24,no-resolve
 IP-CIDR,117.24.24.0/24,no-resolve
+IP-CIDR,17.57.145.0/24,no-resolve
+IP-CIDR,112.67.249.0/24,no-resolve
+IP-CIDR,222.246.0.0/16,no-resolve
+IP-CIDR,222.87.166.0/24,no-resolve
+IP-CIDR,113.116.70.0/24,no-resolve
+IP-CIDR,113.110.4.0/24,no-resolve
+IP-CIDR,113.74.163.0/24,no-resolve
+IP-CIDR,144.52.50.0/24,no-resolve
+IP-CIDR,223.11.26.0/24,no-resolve
+IP-CIDR,175.8.240.0/24,no-resolve
+IP-CIDR,140.224.149.0/24,no-resolve
