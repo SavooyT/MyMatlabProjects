@@ -103,7 +103,10 @@ payload:
   - DOMAIN-SUFFIX,tencentmusic.com
   - DOMAIN-SUFFIX,gslb.ksyuncdn.com
   - DOMAIN-SUFFIX,kugou.com
+  - DOMAIN-SUFFIX,kugoo.com
+  - DOMAIN-SUFFIX,kgimg.com
   - DOMAIN-SUFFIX,kugou.net
+  - DOMAIN-SUFFIX,kugouipv6.com
   # 截断
   - DOMAIN,wap.stockstar.com
   - DOMAIN-SUFFIX,cn
