@@ -109,7 +109,6 @@ payload:
   - DOMAIN-SUFFIX,kugou.net
   - DOMAIN-SUFFIX,kugouipv6.com
   - DOMAIN-SUFFIX,chinacourt.org
-  - DOMAIN-SUFFIX,tuta.com
   # 截断
   - DOMAIN,wap.stockstar.com
   - DOMAIN-SUFFIX,cn
