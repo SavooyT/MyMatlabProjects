@@ -15,6 +15,7 @@ payload:
   - DOMAIN-KEYWORD,landian
   - DOMAIN-KEYWORD,kglink
   - DOMAIN-KEYWORD,qidian
+  - DOMAIN-KEYWORD,bili
   - DOMAIN-SUFFIX,alicdn.com
   - DOMAIN-SUFFIX,cnblogs.com
   - DOMAIN-SUFFIX,china-cba.net
