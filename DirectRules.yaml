@@ -111,6 +111,7 @@ payload:
   - DOMAIN-SUFFIX,kugouipv6.com
   - DOMAIN-SUFFIX,chinacourt.org
   - DOMAIN-SUFFIX,hdslb.com
+  - DOMAIN-SUFFIX,ultramobile.com
   # 截断
   - DOMAIN,wap.stockstar.com
   - DOMAIN-SUFFIX,cn
