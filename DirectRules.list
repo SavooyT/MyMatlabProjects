@@ -104,6 +104,8 @@ DOMAIN-SUFFIX,kugouipv6.com
 DOMAIN-SUFFIX,chinacourt.org
 DOMAIN-SUFFIX,hdslb.com
 DOMAIN-SUFFIX,ultramobile.com
+DOMAIN-SUFFIX,hotmail.com
+DOMAIN-SUFFIX,graph.facebook.com
 USER-AGENT,NeteaseMusic*
 USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*
 DOMAIN,wap.stockstar.com
@@ -166,3 +168,18 @@ IP-CIDR,144.52.50.0/24,no-resolve
 IP-CIDR,223.11.26.0/24,no-resolve
 IP-CIDR,175.8.240.0/24,no-resolve
 IP-CIDR,140.224.149.0/24,no-resolve
+
+# BiliBili
+IP-CIDR,120.233.0.0/24,no-resolve
+IP-CIDR,17.253.0.0/24,no-resolve
+IP-CIDR,120.232.0.0/24,no-resolve
+IP-CIDR,183.240.0.0/24,no-resolve
+IP-CIDR,183.232.0.0/24,no-resolve
+IP-CIDR,183.236.0.0/24,no-resolve
+IP-CIDR,125.211.0.0/24,no-resolve
+IP-CIDR,111.39.0.0/24,no-resolve
+IP-CIDR,182.90.0.0/24,no-resolve
+IP-CIDR,118.182.0.0/24,no-resolve
+IP-CIDR,118.183.0.0/24,no-resolve
+IP-CIDR,111.21.0.0/24,no-resolve
+IP-CIDR,123.138.0.0/24,no-resolve
