@@ -105,16 +105,28 @@ DOMAIN-SUFFIX,chinacourt.org
 DOMAIN-SUFFIX,hdslb.com
 DOMAIN-SUFFIX,ultramobile.com
 DOMAIN-SUFFIX,hotmail.com
+DOMAIN-SUFFIX,qiezibenpao.com
+DOMAIN-SUFFIX,xinqiucc.com
 USER-AGENT,NeteaseMusic*
 USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*
 DOMAIN,wap.stockstar.com
 DOMAIN-SUFFIX,cn
 
 # 通用
+IP-CIDR,110.83.0.0/16,no-resolve
+IP-CIDR,110.128.0.0/9,no-resolve
+IP-CIDR,111.0.0.0/8,no-resolve
 IP-CIDR,112.0.0.0/8,no-resolve
 IP-CIDR,113.0.0.0/8,no-resolve
+IP-CIDR,114.0.0.0/8,no-resolve
+IP-CIDR,115.0.0.0/8,no-resolve
+IP-CIDR,116.0.0.0/8,no-resolve
 
 # 网易云音乐
+IP-CIDR,17.8.0.0/16,no-resolve
+IP-CIDR,27.27.0.0/16,no-resolve
+IP-CIDR,58.0.0.0/8,no-resolve
+IP-CIDR,59.0.0.0/8,no-resolve
 IP-CIDR,101.71.154.241/32,no-resolve
 IP-CIDR,103.126.92.132/31,no-resolve
 IP-CIDR,115.236.112.0/20,no-resolve
@@ -126,10 +138,28 @@ IP-CIDR,39.105.175.128/32,no-resolve
 IP-CIDR,39.105.63.80/32,no-resolve
 IP-CIDR,45.254.48.1/32,no-resolve
 IP-CIDR,47.100.127.239/32,no-resolve
-IP-CIDR,59.111.0.0/16,no-resolve
+IP-CIDR,27.24.0.0/13,no-resolve
+IP-CIDR,36.0.0.0/10,no-resolve
+IP-CIDR,49.64.0.0/12,no-resolve
+IP-CIDR,58.32.0.0/11,no-resolve
+IP-CIDR,59.32.0.0/13,no-resolve
+IP-CIDR,60.160.0.0/12,no-resolve
+IP-CIDR,60.176.0.0/13,no-resolve
+IP-CIDR,106.120.0.0/13,no-resolve
+IP-CIDR,110.80.0.0/12,no-resolve
+IP-CIDR,119.96.0.0/13,no-resolve
+IP-CIDR,119.144.0.0/12,no-resolve
+IP-CIDR,121.192.0.0/11,no-resolve
+IP-CIDR,121.224.0.0/12,no-resolve
+IP-CIDR,122.224.0.0/11,no-resolve
+IP-CIDR,124.112.0.0/13,no-resolve
+IP-CIDR,180.96.0.0/11,no-resolve
+IP-CIDR,218.0.0.0/10,no-resolve
+IP-CIDR,219.128.0.0/11,no-resolve
+IP-CIDR,222.64.0.0/10,no-resolve
 
 # 酷狗音乐
-IP-CIDR,49.7.0.0/16,no-resolve
+IP-CIDR,49.0.0.0/8,no-resolve
 IP-CIDR,27.227.161.0/24,no-resolve
 IP-CIDR,116.128.0.0/9,no-resolve
 IP-CIDR,114.217.130.0/24,no-resolve
@@ -137,7 +167,6 @@ IP-CIDR,124.228.180.0/24,no-resolve
 IP-CIDR,110.182.132.0/24,no-resolve
 IP-CIDR,56.63.45.0/24,no-resolve
 IP-CIDR,111.122.43.0/24,no-resolve
-IP-CIDR,58.214.211.0/24,no-resolve
 IP-CIDR,183.2.0.0/16,no-resolve
 IP-CIDR,183.47.30.0/24,no-resolve
 IP-CIDR,119.133.6.0/24,no-resolve
@@ -146,15 +175,14 @@ IP-CIDR,106.47.51.0/24,no-resolve
 IP-CIDR,125.65.107.0/24,no-resolve
 IP-CIDR,116.26.137.0/24,no-resolve
 IP-CIDR,61.143.193.0/24,no-resolve
-IP-CIDR,58.16.109.0/24,no-resolve
 IP-CIDR,110.245.102.0/24,no-resolve
 IP-CIDR,101.65.133.0/24,no-resolve
 IP-CIDR,122.139.233.0/24,no-resolve
-IP-CIDR,58.21.209.0/24,no-resolve
 IP-CIDR,117.24.24.0/24,no-resolve
 IP-CIDR,17.57.0.0/16,no-resolve
 IP-CIDR,222.246.0.0/16,no-resolve
-IP-CIDR,222.87.166.0/24,no-resolve
+IP-CIDR,222.77.0.0/16,no-resolve
+IP-CIDR,222.87.0.0/16,no-resolve
 IP-CIDR,144.52.50.0/24,no-resolve
 IP-CIDR,223.11.26.0/24,no-resolve
 IP-CIDR,175.8.240.0/24,no-resolve
