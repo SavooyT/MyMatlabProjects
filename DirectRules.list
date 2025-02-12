@@ -105,7 +105,6 @@ DOMAIN-SUFFIX,chinacourt.org
 DOMAIN-SUFFIX,hdslb.com
 DOMAIN-SUFFIX,ultramobile.com
 DOMAIN-SUFFIX,hotmail.com
-DOMAIN-SUFFIX,graph.facebook.com
 USER-AGENT,NeteaseMusic*
 USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*
 DOMAIN,wap.stockstar.com
@@ -183,3 +182,7 @@ IP-CIDR,118.182.0.0/24,no-resolve
 IP-CIDR,118.183.0.0/24,no-resolve
 IP-CIDR,111.21.0.0/24,no-resolve
 IP-CIDR,123.138.0.0/24,no-resolve
+IP-CIDR,112.29.0.0/24,no-resolve
+IP-CIDR,120.209.0.0/24,no-resolve
+IP-CIDR,120.232.0.0/24,no-resolve
+IP-CIDR,119.188.0.0/24,no-resolve
