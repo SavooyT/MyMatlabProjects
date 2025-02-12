@@ -157,6 +157,24 @@ IP-CIDR,180.96.0.0/11,no-resolve
 IP-CIDR,218.0.0.0/10,no-resolve
 IP-CIDR,219.128.0.0/11,no-resolve
 IP-CIDR,222.64.0.0/10,no-resolve
+IP-CIDR,14.16.0.0/12,no-resolve
+IP-CIDR,27.16.0.0/13,no-resolve
+IP-CIDR,60.184.0.0/13,no-resolve
+IP-CIDR,101.92.0.0/14,no-resolve
+IP-CIDR,106.224.0.0/12,no-resolve
+IP-CIDR,117.64.0.0/12,no-resolve
+IP-CIDR,117.192.0.0/11,no-resolve
+IP-CIDR,119.112.0.0/12,no-resolve
+IP-CIDR,120.32.0.0/11,no-resolve
+IP-CIDR,125.64.0.0/10,no-resolve
+IP-CIDR,171.32.0.0/11,no-resolve
+IP-CIDR,175.8.0.0/13,no-resolve
+IP-CIDR,180.160.0.0/12,no-resolve
+IP-CIDR,183.0.0.0/10,no-resolve
+IP-CIDR,220.184.0.0/13,no-resolve
+IP-CIDR,222.176.0.0/12,no-resolve
+IP-CIDR,223.192.0.0/11,no-resolve
+
 
 # 酷狗音乐
 IP-CIDR,49.0.0.0/8,no-resolve
