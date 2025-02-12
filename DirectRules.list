@@ -171,11 +171,14 @@ IP-CIDR,140.224.149.0/24,no-resolve
 # BiliBili
 IP-CIDR,120.233.0.0/16,no-resolve
 IP-CIDR,17.253.0.0/16,no-resolve
+IP-CIDR,17.248.0.0/16,no-resolve
 IP-CIDR,17.23.0.0/16,no-resolve
 IP-CIDR,42.7.0.0/16,no-resolve
 IP-CIDR,42.248.0.0/16,no-resolve
 IP-CIDR,27.128.0.0/16,no-resolve
 IP-CIDR,39.165.0.0/16,no-resolve
+IP-CIDR,39.177.0.0/16,no-resolve
+IP-CIDR,61.167.0.0/16,no-resolve
 IP-CIDR,120.232.0.0/16,no-resolve
 IP-CIDR,183.240.0.0/16,no-resolve
 IP-CIDR,183.232.0.0/16,no-resolve
@@ -203,3 +206,11 @@ IP-CIDR,124.225.0.0/16,no-resolve
 IP-CIDR,113.57.0.0/16,no-resolve
 IP-CIDR,115.231.0.0/16,no-resolve
 IP-CIDR,139.170.0.0/16,no-resolve
+IP-CIDR,123.182.0.0/16,no-resolve
+IP-CIDR,111.38.0.0/16,no-resolve
+IP-CIDR,120.237.0.0/16,no-resolve
+IP-CIDR,101.71.0.0/16,no-resolve
+IP-CIDR,183.237.0.0/16,no-resolve
+IP-CIDR,112.194.0.0/16,no-resolve
+IP-CIDR,223.247.0.0/16,no-resolve
+IP-CIDR,118.184.0.0/16,no-resolve
