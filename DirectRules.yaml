@@ -22,6 +22,7 @@ payload:
   - DOMAIN-SUFFIX,bdimg.com
   - DOMAIN-SUFFIX,bkssl.bdimg.com
   - DOMAIN-SUFFIX,bkimg.cdn.bcebos.com
+  - DOMAIN-SUFFIX,bcebos.com
   - DOMAIN-SUFFIX,alicdn.com
   - DOMAIN-SUFFIX,cnblogs.com
   - DOMAIN-SUFFIX,china-cba.net
