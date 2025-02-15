@@ -17,9 +17,11 @@ payload:
   - DOMAIN-KEYWORD,qidian
   - DOMAIN-KEYWORD,bili
   - DOMAIN-KEYWORD,baike
+  - DOMAIN-KEYWORD,baidu
+  - DOMAIN-SUFFIX,bdstatic.com
+  - DOMAIN-SUFFIX,bdimg.com
   - DOMAIN-SUFFIX,bkssl.bdimg.com
   - DOMAIN-SUFFIX,bkimg.cdn.bcebos.com
-  - DOMAIN-SUFFIX,baidu.com
   - DOMAIN-SUFFIX,alicdn.com
   - DOMAIN-SUFFIX,cnblogs.com
   - DOMAIN-SUFFIX,china-cba.net
