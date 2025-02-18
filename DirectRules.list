@@ -10,6 +10,7 @@ DOMAIN-KEYWORD,qidian
 DOMAIN-KEYWORD,bili
 DOMAIN-KEYWORD,baike
 DOMAIN-KEYWORD,baidu
+DOMAIN-KEYWORD,xiaohongshu
 DOMAIN-SUFFIX,bdstatic.com
 DOMAIN-SUFFIX,bdimg.com
 DOMAIN-SUFFIX,bkssl.bdimg.com
@@ -113,7 +114,6 @@ DOMAIN-SUFFIX,ultramobile.com
 DOMAIN-SUFFIX,hotmail.com
 DOMAIN-SUFFIX,qiezibenpao.com
 DOMAIN-SUFFIX,xinqiucc.com
-DOMAIN-SUFFIX,xiaohongshu.com
 DOMAIN-SUFFIX,xhscdn.com
 DOMAIN-SUFFIX,fengkongcloud.com
 USER-AGENT,NeteaseMusic*
