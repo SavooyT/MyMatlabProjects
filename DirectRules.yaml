@@ -118,6 +118,10 @@ payload:
   - DOMAIN-SUFFIX,chinacourt.org
   - DOMAIN-SUFFIX,hdslb.com
   - DOMAIN-SUFFIX,ultramobile.com
+  - DOMAIN-SUFFIX,xinqiucc.com
+  - DOMAIN-SUFFIX,tianyancha.com
+  - DOMAIN-SUFFIX,qcc.com
+  - DOMAIN-SUFFIX,qcckyc.com
   # 截断
   - DOMAIN,wap.stockstar.com
   - DOMAIN-SUFFIX,cn
