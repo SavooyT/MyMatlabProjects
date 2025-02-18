@@ -116,6 +116,7 @@ DOMAIN-SUFFIX,qiezibenpao.com
 DOMAIN-SUFFIX,xinqiucc.com
 DOMAIN-SUFFIX,xhscdn.com
 DOMAIN-SUFFIX,fengkongcloud.com
+DOMAIN-SUFFIX,taobao.com
 USER-AGENT,NeteaseMusic*
 USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*
 DOMAIN,wap.stockstar.com
@@ -185,6 +186,7 @@ IP-CIDR,220.184.0.0/13,no-resolve
 IP-CIDR,222.176.0.0/12,no-resolve
 IP-CIDR,223.192.0.0/11,no-resolve
 IP-CIDR,163.181.0.0/9,no-resolve
+IP-CIDR,101.132.0.0/9,no-resolve
 
 # 酷狗音乐
 IP-CIDR,49.0.0.0/8,no-resolve
