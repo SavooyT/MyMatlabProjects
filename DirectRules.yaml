@@ -125,6 +125,8 @@ payload:
   - DOMAIN-SUFFIX,qcc.com
   - DOMAIN-SUFFIX,qcckyc.com
   - DOMAIN-SUFFIX,ultramobile.com
+  - DOMAIN-SUFFIX,wuyou.net
+  - DOMAIN-SUFFIX,pinggu.org
   # 截断
   - DOMAIN,wap.stockstar.com
   - DOMAIN-SUFFIX,cn
