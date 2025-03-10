@@ -131,6 +131,8 @@ payload:
   - DOMAIN-SUFFIX,kuaidi100.com
   - DOMAIN-SUFFIX,kuaidi.com
   - DOMAIN-SUFFIX,deppon.com
+  - DOMAIN-SUFFIX,12355.net
+  - DOMAIN-SUFFIX,gdcyl.org
   # 截断
   - DOMAIN,wap.stockstar.com
   - DOMAIN-SUFFIX,cn
