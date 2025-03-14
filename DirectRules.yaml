@@ -133,6 +133,8 @@ payload:
   - DOMAIN-SUFFIX,deppon.com
   - DOMAIN-SUFFIX,12355.net
   - DOMAIN-SUFFIX,gdcyl.org
+  - DOMAIN-SUFFIX,sojson.com
+  - DOMAIN-SUFFIX,buyaocha.com
+  - DOMAIN-SUFFIX,stockstar.com
   # 截断
-  - DOMAIN,wap.stockstar.com
   - DOMAIN-SUFFIX,cn
