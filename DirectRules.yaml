@@ -153,5 +153,6 @@ payload:
   - DOMAIN-SUFFIX,kanzhun.com
   - DOMAIN-SUFFIX,lietou-static.com
   - DOMAIN-SUFFIX,detailroi.com
+  - DOMAIN-SUFFIX,volces.com
   # 截断
   - DOMAIN-SUFFIX,cn
