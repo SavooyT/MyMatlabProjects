@@ -151,5 +151,7 @@ payload:
   - DOMAIN-SUFFIX,bosszhipin.com
   - DOMAIN-SUFFIX,weizhipin.com
   - DOMAIN-SUFFIX,kanzhun.com
+  - DOMAIN-SUFFIX,lietou-static.com
+  - DOMAIN-SUFFIX,detailroi.com
   # 截断
   - DOMAIN-SUFFIX,cn
