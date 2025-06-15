@@ -148,5 +148,7 @@ payload:
   - DOMAIN-SUFFIX,zhipin.com
   - DOMAIN-SUFFIX,lizhi.shop
   - DOMAIN-SUFFIX,qiye.qq.com
+  - DOMAIN-SUFFIX,bosszhipin.com
+  - DOMAIN-SUFFIX,weizhipin.com
   # 截断
   - DOMAIN-SUFFIX,cn
