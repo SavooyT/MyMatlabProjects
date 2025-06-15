@@ -150,5 +150,6 @@ payload:
   - DOMAIN-SUFFIX,qiye.qq.com
   - DOMAIN-SUFFIX,bosszhipin.com
   - DOMAIN-SUFFIX,weizhipin.com
+  - DOMAIN-SUFFIX,kanzhun.com
   # 截断
   - DOMAIN-SUFFIX,cn
