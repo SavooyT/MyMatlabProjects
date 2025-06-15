@@ -143,7 +143,10 @@ payload:
   - DOMAIN-SUFFIX,51jobcdn.com
   - DOMAIN-SUFFIX,51jingying.com
   - DOMAIN-SUFFIX,yingjiesheng.com
+  - DOMAIN-SUFFIX,yingjiesheng.net
   - DOMAIN-SUFFIX,liepin.com
   - DOMAIN-SUFFIX,zhipin.com
+  - DOMAIN-SUFFIX,lizhi.shop
+  - DOMAIN-SUFFIX,qiye.qq.com
   # 截断
   - DOMAIN-SUFFIX,cn
