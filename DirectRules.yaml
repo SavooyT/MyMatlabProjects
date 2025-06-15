@@ -138,5 +138,12 @@ payload:
   - DOMAIN-SUFFIX,sojson.com
   - DOMAIN-SUFFIX,buyaocha.com
   - DOMAIN-SUFFIX,stockstar.com
+  - DOMAIN-SUFFIX,apsgo.com
+  - DOMAIN-SUFFIX,51job.com
+  - DOMAIN-SUFFIX,51jobcdn.com
+  - DOMAIN-SUFFIX,51jingying.com
+  - DOMAIN-SUFFIX,yingjiesheng.com
+  - DOMAIN-SUFFIX,liepin.com
+  - DOMAIN-SUFFIX,zhipin.com
   # 截断
   - DOMAIN-SUFFIX,cn
