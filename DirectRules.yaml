@@ -154,5 +154,6 @@ payload:
   - DOMAIN-SUFFIX,lietou-static.com
   - DOMAIN-SUFFIX,detailroi.com
   - DOMAIN-SUFFIX,volces.com
+  - DOMAIN-SUFFIX,tuta.com
   # 截断
   - DOMAIN-SUFFIX,cn
