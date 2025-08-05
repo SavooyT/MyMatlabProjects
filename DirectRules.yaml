@@ -155,5 +155,6 @@ payload:
   - DOMAIN-SUFFIX,detailroi.com
   - DOMAIN-SUFFIX,volces.com
   - DOMAIN-SUFFIX,tuta.com
+  - DOMAIN-SUFFIX,geetest.com
   # 截断
   - DOMAIN-SUFFIX,cn
