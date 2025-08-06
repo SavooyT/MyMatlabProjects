@@ -20,8 +20,6 @@ payload:
   - DOMAIN-KEYWORD,baidu
   - DOMAIN-SUFFIX,cnzz.com
   - DOMAIN-SUFFIX,ciweimao.com
-  - DOMAIN-SUFFIX,xhscdn.com
-  - DOMAIN-SUFFIX,xiaohongshu.com
   - DOMAIN-SUFFIX,bdstatic.com
   - DOMAIN-SUFFIX,bdimg.com
   - DOMAIN-SUFFIX,bkssl.bdimg.com
