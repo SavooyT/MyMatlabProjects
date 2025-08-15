@@ -154,5 +154,8 @@ payload:
   - DOMAIN-SUFFIX,volces.com
   - DOMAIN-SUFFIX,tuta.com
   - DOMAIN-SUFFIX,geetest.com
+  - DOMAIN-SUFFIX,indexea.com
+  - DOMAIN-SUFFIX,gitee.com
+  - DOMAIN-SUFFIX,oschina.net
   # 截断
   - DOMAIN-SUFFIX,cn
