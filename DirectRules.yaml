@@ -158,5 +158,7 @@ payload:
   - DOMAIN-SUFFIX,oschina.net
   - DOMAIN-SUFFIX,fangpi.net
   - DOMAIN-SUFFIX,bytedance.com
+  - DOMAIN-SUFFIX,xiaohongshu.com
+  - DOMAIN-SUFFIX,xhscdn.com
   # 截断
   - DOMAIN-SUFFIX,cn
