@@ -27,6 +27,7 @@ payload:
   - IP-CIDR6,2002::/16           # 6to4
   - IP-CIDR6,64:ff9b::/96        # IPv4/IPv6 翻译 (IPv4/IPv6 mapping)
   - IP-CIDR6,ff00::/8            # multicast
+  
   # 其他直连
   - DOMAIN-KEYWORD,cctv
   - DOMAIN-KEYWORD,cntv
