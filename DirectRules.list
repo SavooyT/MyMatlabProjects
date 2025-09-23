@@ -1,31 +1,31 @@
 # ipv4内网网段直连
-IP-CIDR,0.0.0.0/8,DIRECT            # 当前网络地址/保留
-IP-CIDR,10.0.0.0/8,DIRECT           # 私有网段
-IP-CIDR,100.64.0.0/10,DIRECT        # CGNAT (Carrier Grade NAT)
-IP-CIDR,127.0.0.0/8,DIRECT          # 回环
-IP-CIDR,169.254.0.0/16,DIRECT       # 链路本地 (APIPA)
-IP-CIDR,172.16.0.0/12,DIRECT        # 私有网段
-IP-CIDR,192.0.0.0/24,DIRECT         # IETF 协议/特殊用途
-IP-CIDR,192.0.2.0/24,DIRECT         # TEST-NET-1 (文档测试)
-IP-CIDR,192.88.99.0/24,DIRECT       # 6to4 中继（special）
-IP-CIDR,192.168.0.0/16,DIRECT       # 私有网段
-IP-CIDR,198.18.0.0/15,DIRECT        # benchmark/testing
-IP-CIDR,198.51.100.0/24,DIRECT      # TEST-NET-2 (文档测试)
-IP-CIDR,203.0.113.0/24,DIRECT       # TEST-NET-3 (文档测试)
-IP-CIDR,224.0.0.0/4,DIRECT          # multicast
-IP-CIDR,240.0.0.0/4,DIRECT          # 保留（包括 255.0.0.0/8）
-IP-CIDR,255.255.255.255/32,DIRECT   # Broadcast
+IP-CIDR,0.0.0.0/8            # 当前网络地址/保留
+IP-CIDR,10.0.0.0/8           # 私有网段
+IP-CIDR,100.64.0.0/10        # CGNAT (Carrier Grade NAT)
+IP-CIDR,127.0.0.0/8          # 回环
+IP-CIDR,169.254.0.0/16       # 链路本地 (APIPA)
+IP-CIDR,172.16.0.0/12        # 私有网段
+IP-CIDR,192.0.0.0/24         # IETF 协议/特殊用途
+IP-CIDR,192.0.2.0/24         # TEST-NET-1 (文档测试)
+IP-CIDR,192.88.99.0/24       # 6to4 中继（special）
+IP-CIDR,192.168.0.0/16       # 私有网段
+IP-CIDR,198.18.0.0/15        # benchmark/testing
+IP-CIDR,198.51.100.0/24      # TEST-NET-2 (文档测试)
+IP-CIDR,203.0.113.0/24       # TEST-NET-3 (文档测试)
+IP-CIDR,224.0.0.0/4          # multicast
+IP-CIDR,240.0.0.0/4          # 保留（包括 255.0.0.0/8）
+IP-CIDR,255.255.255.255/32   # Broadcast
 
 # ipv6内网网段直连
-IP-CIDR6,::1/128,DIRECT             # 回环
-IP-CIDR6,fe80::/10,DIRECT           # 链路本地
-IP-CIDR6,fc00::/7,DIRECT            # ULA (Unique Local Address)
-IP-CIDR6,fec0::/10,DIRECT           # site-local (已弃用但有时仍见)
-IP-CIDR6,::ffff:0:0/96,DIRECT       # IPv4-mapped IPv6
-IP-CIDR6,2001:db8::/32,DIRECT       # 文档地址 (TEST)
-IP-CIDR6,2002::/16,DIRECT           # 6to4
-IP-CIDR6,64:ff9b::/96,DIRECT        # IPv4/IPv6 翻译 (IPv4/IPv6 mapping)
-IP-CIDR6,ff00::/8,DIRECT            # multicast
+IP-CIDR6,::1/128             # 回环
+IP-CIDR6,fe80::/10           # 链路本地
+IP-CIDR6,fc00::/7            # ULA (Unique Local Address)
+IP-CIDR6,fec0::/10           # site-local (已弃用但有时仍见)
+IP-CIDR6,::ffff:0:0/96       # IPv4-mapped IPv6
+IP-CIDR6,2001:db8::/32       # 文档地址 (TEST)
+IP-CIDR6,2002::/16           # 6to4
+IP-CIDR6,64:ff9b::/96        # IPv4/IPv6 翻译 (IPv4/IPv6 mapping)
+IP-CIDR6,ff00::/8            # multicast
 
 # 其他直连
 DOMAIN-KEYWORD,cctv
