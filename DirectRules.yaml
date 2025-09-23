@@ -160,5 +160,7 @@ payload:
   - DOMAIN-SUFFIX,bytedance.com
   - DOMAIN-SUFFIX,xiaohongshu.com
   - DOMAIN-SUFFIX,xhscdn.com
+  - DOMAIN-SUFFIX,sanguosha.com
+  - DOMAIN-SUFFIX,hzyoka.com
   # 截断
   - DOMAIN-SUFFIX,cn
