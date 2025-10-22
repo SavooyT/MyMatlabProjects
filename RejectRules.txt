@@ -1,0 +1,53 @@
+ DOMAIN-SUFFIX,gjfzpt.cn
+ DOMAIN-SUFFIX,szbdyd.com
+ DOMAIN-SUFFIX,bsccdn.net
+ DOMAIN-SUFFIX,pkoplink.com
+ DOMAIN-SUFFIX,saxysec.com
+ DOMAIN-SUFFIX,uhabo.com
+ DOMAIN-SUFFIX,xycdn.com
+ DOMAIN-SUFFIX,kuiniuca.com
+ DOMAIN-SUFFIX,onethingpcs.com
+ DOMAIN-SUFFIX,jomodns.cn
+ DOMAIN-SUFFIX,p2p.huya.com
+ DOMAIN-SUFFIX,stun.douyucdn.cn
+ DOMAIN-SUFFIX,stun.hitv.com
+ DOMAIN-SUFFIX,stun1.douyucdn.cn
+ DOMAIN-SUFFIX,mcdn.bilivideo.cn
+ DOMAIN-SUFFIX,tpa-hcdn.iqiyi.com
+ DOMAIN-SUFFIX,pcdn.xmcdn.com
+ DOMAIN-SUFFIX,pcdn.yximgs.com
+ DOMAIN-SUFFIX,dyp2p-ali.douyucdn.cn
+ DOMAIN-SUFFIX,dyp2p-hw.douyucdn.cn
+ DOMAIN-SUFFIX,p2p-ali.douyucdn.cn
+ DOMAIN-SUFFIX,p2p.qq.com
+ DOMAIN-SUFFIX,p2pchunk-hw.douyucdn.cn
+ DOMAIN-SUFFIX,p2pchunk-table.douyucdn.cn
+ DOMAIN-SUFFIX,p2pchunk-ws.douyucdn.cn
+ DOMAIN-SUFFIX,p2perrorlog.douyucdn.cn
+ DOMAIN-SUFFIX,p2plive-ali.douyucdn.cn
+ DOMAIN-SUFFIX,p2plive-ws.douyucdn.cn
+ DOMAIN-SUFFIX,p2plog.douyucdn.cn
+ DOMAIN-SUFFIX,p2ptun.qq.com
+ DOMAIN-SUFFIX,p2pupdate.gamedl.qq.com
+ DOMAIN-SUFFIX,p2pupgrade.gamedl.qq.com
+ DOMAIN-SUFFIX,p2pvod-ws.douyucdn.cn
+
+ DOMAIN,hw-edge.biliapi.net
+ DOMAIN,hw-edge.biliapi.net
+ DOMAIN,ali-edge.biliapi.net
+IP-CIDR,180.163.29.123/32,no-resolve
+IP-CIDR,180.163.31.171/32,no-resolve
+IP-CIDR,101.91.135.34/32,no-resolve
+IP-CIDR,101.91.136.16/32,no-resolve
+IP-CIDR,101.91.136.94/32,no-resolve
+IP-CIDR,101.91.136.146/32,no-resolve
+IP-CIDR,101.91.136.248/32,no-resolve
+IP-CIDR,101.91.133.42/32,no-resolve
+IP-CIDR6,240e:96c:200:6004:738:7f53:f03f:5d21/128,no-resolve
+IP-CIDR6,240e:96c:200:6004:814a:f28c:7820:ae93/128,no-resolve
+IP-CIDR6,240e:96c:200:6004:91ac:562e:f9a2:5db2/128,no-resolve
+IP-CIDR6,240e:96c:200:6004:df03:cd26:dc13:efc4/128,no-resolve
+IP-CIDR6,240e:96c:200:6004:26bc:7df0:bccf:3d9b/128,no-resolve
+IP-CIDR6,240e:96c:200:6004:50:5500:e008:c9ef/128,no-resolve
+IP-CIDR6,2402:4e00:140c:a000:0:9e09:36d8:765f/128,no-resolve
+IP-CIDR6,2402:4e00:140c:a000:0:9e09:3950:74c7/128,no-resolve
