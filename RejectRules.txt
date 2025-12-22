@@ -31,7 +31,10 @@ DOMAIN-SUFFIX,p2ptun.qq.com
 DOMAIN-SUFFIX,p2pupdate.gamedl.qq.com
 DOMAIN-SUFFIX,p2pupgrade.gamedl.qq.com
 DOMAIN-SUFFIX,p2pvod-ws.douyucdn.cn
+DOMAIN-SUFFIX,google-analytics.com
+DOMAIN-SUFFIX,doubleclick.net
 
+DOMAIN,analytics.google.com
 DOMAIN,hw-edge.biliapi.net
 DOMAIN,hw-edge.biliapi.net
 DOMAIN,ali-edge.biliapi.net
