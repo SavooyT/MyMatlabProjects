@@ -188,5 +188,7 @@ payload:
   - DOMAIN-SUFFIX,kukutool.com
   - DOMAIN-SUFFIX,hellotik.com
   - DOMAIN-SUFFIX,szlcsc.com
+  - DOMAIN-SUFFIX,easyeda.com
+  - DOMAIN-SUFFIX,oshwhub.com
   # 截断
   - DOMAIN-SUFFIX,cn
