@@ -40,6 +40,7 @@ payload:
   - DOMAIN-KEYWORD,bili
   - DOMAIN-KEYWORD,baike
   - DOMAIN-KEYWORD,baidu
+  - DOMAIN-KEYWORD,jlc
   - DOMAIN-SUFFIX,cnzz.com
   - DOMAIN-SUFFIX,ciweimao.com
   - DOMAIN-SUFFIX,bdstatic.com
@@ -187,6 +188,5 @@ payload:
   - DOMAIN-SUFFIX,kukutool.com
   - DOMAIN-SUFFIX,hellotik.com
   - DOMAIN-SUFFIX,szlcsc.com
-  - DOMAIN-SUFFIX,lceda.cn
   # 截断
   - DOMAIN-SUFFIX,cn
