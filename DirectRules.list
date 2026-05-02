@@ -41,14 +41,11 @@ DOMAIN-KEYWORD,bili
 DOMAIN-KEYWORD,baike
 DOMAIN-KEYWORD,baidu
 DOMAIN-KEYWORD,jlc
-DOMAIN-SUFFIX,bdimg.com
-DOMAIN-SUFFIX,bdstatic.com
 DOMAIN-SUFFIX,cnzz.com
 DOMAIN-SUFFIX,ciweimao.com
 DOMAIN-SUFFIX,appsflyer.com
-DOMAIN-SUFFIX,bdstatic.com
 DOMAIN-SUFFIX,bdimg.com
-DOMAIN-SUFFIX,bkssl.bdimg.com
+DOMAIN-SUFFIX,bdstatic.com
 DOMAIN-SUFFIX,bkimg.cdn.bcebos.com
 DOMAIN-SUFFIX,bcebos.com
 DOMAIN-SUFFIX,alicdn.com
