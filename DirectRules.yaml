@@ -29,6 +29,7 @@ payload:
   - IP-CIDR6,ff00::/8            # multicast
   
   # 其他直连
+  - DOMAIN-SUFFIX,cn
   - DOMAIN-KEYWORD,cctv
   - DOMAIN-KEYWORD,cntv
   - DOMAIN-KEYWORD,chinalive
@@ -190,5 +191,16 @@ payload:
   - DOMAIN-SUFFIX,szlcsc.com
   - DOMAIN-SUFFIX,easyeda.com
   - DOMAIN-SUFFIX,oshwhub.com
-  # 截断
-  - DOMAIN-SUFFIX,cn
+  - DOMAIN-SUFFIX,deepl.com
+  - DOMAIN-SUFFIX,cnki.net
+  - DOMAIN-SUFFIX,bjsbnet.com
+  - DOMAIN-SUFFIX,chndoi.org
+  - DOMAIN-SUFFIX,chndoi.net
+  - DOMAIN-SUFFIX,chndoi.com
+  - DOMAIN-SUFFIX,cnkidoi.org
+  - DOMAIN-SUFFIX,cnkidoi.net
+  - DOMAIN-SUFFIX,cnkidoi.com
+  - DOMAIN-SUFFIX,wuxizazhi.net
+  - DOMAIN-SUFFIX,wuxizazhi.com
+  - DOMAIN-SUFFIX,zhizhen.com
+
