@@ -28,6 +28,7 @@ IP-CIDR6,64:ff9b::/96        # IPv4/IPv6 翻译 (IPv4/IPv6 mapping)
 IP-CIDR6,ff00::/8            # multicast
 
 # 其他直连
+DOMAIN-SUFFIX,cn
 DOMAIN-KEYWORD,cctv
 DOMAIN-KEYWORD,cntv
 DOMAIN-KEYWORD,chinalive
@@ -40,6 +41,8 @@ DOMAIN-KEYWORD,bili
 DOMAIN-KEYWORD,baike
 DOMAIN-KEYWORD,baidu
 DOMAIN-KEYWORD,jlc
+DOMAIN-SUFFIX,bdimg.com
+DOMAIN-SUFFIX,bdstatic.com
 DOMAIN-SUFFIX,cnzz.com
 DOMAIN-SUFFIX,ciweimao.com
 DOMAIN-SUFFIX,appsflyer.com
@@ -192,6 +195,15 @@ DOMAIN-SUFFIX,easyeda.com
 DOMAIN-SUFFIX,oshwhub.com
 DOMAIN-SUFFIX,deepl.com
 DOMAIN-SUFFIX,cnki.net
+DOMAIN-SUFFIX,chndoi.org
+DOMAIN-SUFFIX,chndoi.net
+DOMAIN-SUFFIX,chndoi.com
+DOMAIN-SUFFIX,cnkidoi.org
+DOMAIN-SUFFIX,cnkidoi.net
+DOMAIN-SUFFIX,cnkidoi.com
+DOMAIN-SUFFIX,wuxizazhi.net
+DOMAIN-SUFFIX,wuxizazhi.com
+DOMAIN-SUFFIX,zhizhen.com
 USER-AGENT,NeteaseMusic*
 USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*
-DOMAIN-SUFFIX,cn
+
