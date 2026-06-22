@@ -1,1 +1,11 @@
-
+payload:
+  - DOMAIN-SUFFIX,war.gov
+  - DOMAIN-SUFFIX,bls.gov
+  - DOMAIN-SUFFIX,bis.gov
+  - DOMAIN-SUFFIX,jp
+  - DOMAIN-SUFFIX,tw
+  - DOMAIN-SUFFIX,spacex.com
+  - DOMAIN-SUFFIX,census.gov
+  - DOMAIN-SUFFIX,army.mil
+  - DOMAIN-SUFFIX,navy.mil
+  - DOMAIN-SUFFIX,sam.mil
