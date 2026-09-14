@@ -1,33 +1,33 @@
-# ipv4内网网段直连
-IP-CIDR,0.0.0.0/8            # 当前网络地址/保留
-IP-CIDR,10.0.0.0/8           # 私有网段
-IP-CIDR,100.64.0.0/10        # CGNAT (Carrier Grade NAT)
-IP-CIDR,127.0.0.0/8          # 回环
-IP-CIDR,169.254.0.0/16       # 链路本地 (APIPA)
-IP-CIDR,172.16.0.0/12        # 私有网段
-IP-CIDR,192.0.0.0/24         # IETF 协议/特殊用途
-IP-CIDR,192.0.2.0/24         # TEST-NET-1 (文档测试)
-IP-CIDR,192.88.99.0/24       # 6to4 中继（special）
-IP-CIDR,192.168.0.0/16       # 私有网段
-IP-CIDR,198.18.0.0/15        # benchmark/testing
-IP-CIDR,198.51.100.0/24      # TEST-NET-2 (文档测试)
-IP-CIDR,203.0.113.0/24       # TEST-NET-3 (文档测试)
-IP-CIDR,224.0.0.0/4          # multicast
-IP-CIDR,240.0.0.0/4          # 保留（包括 255.0.0.0/8）
-IP-CIDR,255.255.255.255/32   # Broadcast
+#! ipv4内网网段直连
+IP-CIDR,0.0.0.0/8            #! 当前网络地址/保留
+IP-CIDR,10.0.0.0/8           #! 私有网段
+IP-CIDR,100.64.0.0/10        #! CGNAT (Carrier Grade NAT)
+IP-CIDR,127.0.0.0/8          #! 回环
+IP-CIDR,169.254.0.0/16       #! 链路本地 (APIPA)
+IP-CIDR,172.16.0.0/12        #! 私有网段
+IP-CIDR,192.0.0.0/24         #! IETF 协议/特殊用途
+IP-CIDR,192.0.2.0/24         #! TEST-NET-1 (文档测试)
+IP-CIDR,192.88.99.0/24       #! 6to4 中继（special）
+IP-CIDR,192.168.0.0/16       #! 私有网段
+IP-CIDR,198.18.0.0/15        #! benchmark/testing
+IP-CIDR,198.51.100.0/24      #! TEST-NET-2 (文档测试)
+IP-CIDR,203.0.113.0/24       #! TEST-NET-3 (文档测试)
+IP-CIDR,224.0.0.0/4          #! multicast
+IP-CIDR,240.0.0.0/4          #! 保留（包括 255.0.0.0/8）
+IP-CIDR,255.255.255.255/32   #! Broadcast
 
-# ipv6内网网段直连
-IP-CIDR6,::1/128             # 回环
-IP-CIDR6,fe80::/10           # 链路本地
-IP-CIDR6,fc00::/7            # ULA (Unique Local Address)
-IP-CIDR6,fec0::/10           # site-local (已弃用但有时仍见)
-IP-CIDR6,::ffff:0:0/96       # IPv4-mapped IPv6
-IP-CIDR6,2001:db8::/32       # 文档地址 (TEST)
-IP-CIDR6,2002::/16           # 6to4
-IP-CIDR6,64:ff9b::/96        # IPv4/IPv6 翻译 (IPv4/IPv6 mapping)
-IP-CIDR6,ff00::/8            # multicast
-
-# 其他直连
+#! ipv6内网网段直连
+IP-CIDR6,::1/128             #! 回环
+IP-CIDR6,fe80::/10           #! 链路本地
+IP-CIDR6,fc00::/7            #! ULA (Unique Local Address)
+IP-CIDR6,fec0::/10           #! site-local (已弃用但有时仍见)
+IP-CIDR6,::ffff:0:0/96       #! IPv4-mapped IPv6
+IP-CIDR6,2001:db8::/32       #! 文档地址 (TEST)
+IP-CIDR6,2002::/16           #! 6to4
+IP-CIDR6,64:ff9b::/96        #! IPv4/IPv6 翻译 (IPv4/IPv6 mapping)
+IP-CIDR6,ff00::/8            #! multicast
+  
+#! 其他直连
 DOMAIN-SUFFIX,cn
 DOMAIN-KEYWORD,cctv
 DOMAIN-KEYWORD,cntv
@@ -43,9 +43,8 @@ DOMAIN-KEYWORD,baidu
 DOMAIN-KEYWORD,jlc
 DOMAIN-SUFFIX,cnzz.com
 DOMAIN-SUFFIX,ciweimao.com
-DOMAIN-SUFFIX,appsflyer.com
-DOMAIN-SUFFIX,bdimg.com
 DOMAIN-SUFFIX,bdstatic.com
+DOMAIN-SUFFIX,bdimg.com
 DOMAIN-SUFFIX,bkimg.cdn.bcebos.com
 DOMAIN-SUFFIX,bcebos.com
 DOMAIN-SUFFIX,alicdn.com
@@ -143,8 +142,6 @@ DOMAIN-SUFFIX,kugouipv6.com
 DOMAIN-SUFFIX,chinacourt.org
 DOMAIN-SUFFIX,hdslb.com
 DOMAIN-SUFFIX,ultramobile.com
-DOMAIN-SUFFIX,hotmail.com
-DOMAIN-SUFFIX,qiezibenpao.com
 DOMAIN-SUFFIX,xinqiucc.com
 DOMAIN-SUFFIX,tianyancha.com
 DOMAIN-SUFFIX,qcc.com
@@ -158,9 +155,9 @@ DOMAIN-SUFFIX,kuaidi.com
 DOMAIN-SUFFIX,deppon.com
 DOMAIN-SUFFIX,12355.net
 DOMAIN-SUFFIX,gdcyl.org
-DOMAIN-SUFFIX,stockstar.com
 DOMAIN-SUFFIX,sojson.com
 DOMAIN-SUFFIX,buyaocha.com
+DOMAIN-SUFFIX,stockstar.com
 DOMAIN-SUFFIX,apsgo.com
 DOMAIN-SUFFIX,51job.com
 DOMAIN-SUFFIX,51jobcdn.com
@@ -183,6 +180,8 @@ DOMAIN-SUFFIX,gitee.com
 DOMAIN-SUFFIX,oschina.net
 DOMAIN-SUFFIX,fangpi.net
 DOMAIN-SUFFIX,bytedance.com
+DOMAIN-SUFFIX,xiaohongshu.com
+DOMAIN-SUFFIX,xhscdn.com
 DOMAIN-SUFFIX,sanguosha.com
 DOMAIN-SUFFIX,hzyoka.com
 DOMAIN-SUFFIX,kukutool.com
@@ -192,6 +191,7 @@ DOMAIN-SUFFIX,easyeda.com
 DOMAIN-SUFFIX,oshwhub.com
 DOMAIN-SUFFIX,deepl.com
 DOMAIN-SUFFIX,cnki.net
+DOMAIN-SUFFIX,bjsbnet.com
 DOMAIN-SUFFIX,chndoi.org
 DOMAIN-SUFFIX,chndoi.net
 DOMAIN-SUFFIX,chndoi.com
@@ -202,6 +202,3 @@ DOMAIN-SUFFIX,wuxizazhi.net
 DOMAIN-SUFFIX,wuxizazhi.com
 DOMAIN-SUFFIX,zhizhen.com
 DOMAIN-SUFFIX,fx678.com
-USER-AGENT,NeteaseMusic*
-USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*
-
