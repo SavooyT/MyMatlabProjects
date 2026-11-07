@@ -5,6 +5,7 @@ payload:
   - DOMAIN-KEYWORD,pincong
   - DOMAIN-KEYWORD,epoch
   - DOMAIN-KEYWORD,bannedbook
+  - DOMAIN-KEYWORD,kanzhongguo
   - DOMAIN-SUFFIX,falundafa.org
   - DOMAIN-SUFFIX,faluninfo.net
   - DOMAIN-SUFFIX,minghui.org
